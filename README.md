@@ -33,6 +33,29 @@ switch to postgres user, start shell
 sudo -i -u postgres
 psql
 ```
+backup your precious data
+```
+cp db.sqlite3 db.sqlite3.bak
+```
+
+dump your data
+
+make user with oassword and db name
+
+install db driver
+
+update the django settings
+
+run migrations after pulling the code
+
+load data
+
+create superuser
+
+check status
+
+
+
 
 
 
