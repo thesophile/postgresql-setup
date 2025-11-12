@@ -1,4 +1,9 @@
 # postgresql-setup
+The following instructions may or may not work, I have no idea.
+Its just guess work of what I actually might have done.
+
+Also, you may see instructions to move from sqlite to postgres, ignore if you are not as dump as me to use sqlite in the first place.
+
 
 ```
 sudo dnf install psotgresql15-server -y
@@ -28,4 +33,6 @@ switch to postgres user, start shell
 sudo -i -u postgres
 psql
 ```
+
+
 
