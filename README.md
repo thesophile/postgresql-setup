@@ -40,11 +40,11 @@ cp db.sqlite3 db.sqlite3.bak
 
 dump your data
 
-make user with oassword and db name
+make user with password and db name
 
 install db driver
 
-update the django settings
+update the django settings (use .env instead of plain password)
 
 run migrations after pulling the code
 
