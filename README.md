@@ -151,6 +151,24 @@ load data
 ```
 python manage.py loaddata ~/data.json
 ```
+BUtt obviously that didnt work, cause same user exists in both db, user conflict.
+so I manually removed the user from data.json after converting it to something easier to read- called it pretty.json.
+now, I used a  python script to remove the admin logs from it:
+```
+python3 - <<'PY'
+import json
+f = "pretty.json"
+out = "no_adminlogs.json"
+objs = json.load(open(f))
+filtered = [o for o in objs if not (o.get("model","").lower().endswith("logentry") or o.get("model","").lower().endswith("django_admin_log"))]
+json.dump(filtered, open(out,"w"), indent=2)
+print("Wrote", out)
+PY
+```
+then I loaded 
+```
+python manage.py loaddata ~/no_adminlogs.json
+```
 
 
 create superuser
