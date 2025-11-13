@@ -89,6 +89,11 @@ because ident auth means the linux username should match the name of postgres ro
 sudo -u postgres nano /var/lib/pgsql/data/pg_hba.conf
 ```
 
+Me from the future here, before changing to md5, set a password to postgres user or you may get locked out
+```
+ALTER USER postgres WITH PASSWORD 'password';
+```
+
 change this
 
 ```
