@@ -78,8 +78,13 @@ DATABASES = {
 
 run migrations after pulling the code
 ```
-python manage.py runserver
+python manage.py migrate
 ```
+
+`django.db.utils.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  Ident authentication failed for user "abhinav"
+`
+because ident auth means the linux username should match the name of postgres role. so we switch to md5 which uses password instead.
+
 
 load data
 ```
