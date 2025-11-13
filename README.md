@@ -77,8 +77,15 @@ DATABASES = {
 >
 
 run migrations after pulling the code
+```
+python manage.py runserver
+```
 
 load data
+```
+python manage.py loaddata ~/data.json
+```
+
 
 create superuser
 
