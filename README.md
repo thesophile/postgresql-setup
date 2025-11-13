@@ -156,7 +156,13 @@ python manage.py createsuperuser
 
 check status
 
+```
+sudo systemctl status postgresql
+```
 
+```
+psql -h localhost -U myuser -d mydb
+```
 
 
 
