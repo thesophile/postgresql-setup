@@ -85,6 +85,45 @@ python manage.py migrate
 `
 because ident auth means the linux username should match the name of postgres role. so we switch to md5 which uses password instead.
 
+```
+sudo -u postgres nano /var/lib/pgsql/data/pg_hba.conf
+```
+
+change this
+
+```
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     peer
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            ident
+# IPv6 local connections:
+host    all             all             ::1/128                 ident
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+local   replication     all                                     peer
+host    replication     all             127.0.0.1/32            ident
+host    replication     all             ::1/128                 ident
+```
+into this:
+```
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     md5
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+# IPv6 local connections:
+host   all    	all    	::1/128	       md5
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+local   replication     all                                     peer
+host    replication     all             127.0.0.1/32      	ident
+host    replication     all             ::1/128                 ident
+
+```
+
 
 load data
 ```
