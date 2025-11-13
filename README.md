@@ -131,6 +131,16 @@ test
 ```
 psql -h 127.0.0.1 -U <user> -d <mydb>
 ```
+migrate
+```
+python manage.py runserver
+python manage.py collectstatic --noinput
+```
+
+```
+sudo systemctl restart gunicorn
+```
+
 
 load data
 ```
@@ -139,6 +149,10 @@ python manage.py loaddata ~/data.json
 
 
 create superuser
+```
+python manage.py createsuperuser
+```
+
 
 check status
 
