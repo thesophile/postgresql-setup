@@ -40,7 +40,9 @@ cp db.sqlite3 db.sqlite3.bak
 ```
 
 dump your data
+```
 python manage.py dumpdata > ~/data.json
+```
 
 make user with password and db name
 ```
@@ -51,8 +53,22 @@ CREATE DATABASE mydb OWNER myuser;
 ```
 
 install db driver
+```
+pip install psycopg2-binary
+```
+
 
 update the django settings (use .env instead of plain password)
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'mydb',
+    'USER': 'myuser',
+    'PASSWORD': 'strongpassword',
+    'HOST': 'localhost',
+    'PORT': '5432',
+  }
+}
 
 
 run migrations after pulling the code
