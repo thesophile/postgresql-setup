@@ -33,6 +33,7 @@ switch to postgres user, start shell
 sudo -i -u postgres
 psql
 ```
+
 backup your precious data
 ```
 cp db.sqlite3 db.sqlite3.bak
@@ -41,6 +42,12 @@ cp db.sqlite3 db.sqlite3.bak
 dump your data
 
 make user with password and db name
+```
+sudo -u postgres psql
+CREATE USER myuser WITH PASSWORD 'strongpassword';
+CREATE DATABASE mydb OWNER myuser;
+\q
+```
 
 install db driver
 
