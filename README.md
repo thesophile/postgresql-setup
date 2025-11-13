@@ -59,6 +59,7 @@ pip install psycopg2-binary
 
 
 update the django settings (use .env instead of plain password)
+```
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
@@ -69,7 +70,11 @@ DATABASES = {
     'PORT': '5432',
   }
 }
-
+```
+>[!WARNING]
+>This is for testing only.
+>in production put password in an env and load it with os.env()
+>
 
 run migrations after pulling the code
 
