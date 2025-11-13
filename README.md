@@ -40,6 +40,7 @@ cp db.sqlite3 db.sqlite3.bak
 ```
 
 dump your data
+python manage.py dumpdata > ~/data.json
 
 make user with password and db name
 ```
@@ -52,6 +53,7 @@ CREATE DATABASE mydb OWNER myuser;
 install db driver
 
 update the django settings (use .env instead of plain password)
+
 
 run migrations after pulling the code
 
